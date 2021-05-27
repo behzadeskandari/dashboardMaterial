@@ -1,150 +1,37 @@
 import React from "react";
 import { createStore } from "redux";
 
+
 const allLanguages = [
   { code: "en", name: "English" },
   { code: "per", name: "persian" },
   { code: "ar", name: "arabic" },
 ];
 
-export const translations = [
-  {
-    enMenu: [
-      {
-        Currency: "Currency",
-        EXCHANGERATE: "Exchange Rate",
-        Products: "products",
-        PERSON: "person",
-        COSTOMSANDPORT: "costom And Port",
-        LANGUAGE: "Language",
-        REGION: "REGION",
-        SERVICES: "SERVICES",
-        UM: "UM",
-      },
-    ],
-    perMenu: [
-      {
-        Currency: "واحد پول",
-        EXCHANGERATE: "نرخ تعادل",
-        Products: "کالا",
-        PERSON: "شخص",
-        COSTOMSANDPORT: "گمرک و بندر",
-        LANGUAGE: "زبان",
-        REGION: "منطقه",
-        SERVICES: "سرویس ها",
-        UM: "مدیریت کاربران",
-      },
-    ],
-    arMenu: [
-      {
-        Currency: "عملة",
-        EXCHANGERATE: "سعر الصرف",
-        Products: "منتجات",
-        PERSON: "شخص",
-        COSTOMSANDPORT: "الجمارك والميناء",
-        LANGUAGE: "لغة",
-        REGION: "منطقة",
-        SERVICES: "خدمات",
-        UM: "إدارةالمستخدم",
-      },
-    ],
+export function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
 
-    enForm: [
-      {
-        CurrencyTypeCode: "Currency Type Code",
-
-        CurrencyTypeName: "Currency Type Name",
-        Date: "Date",
-        Modifier: "Modifier",
-        ModifierDateTime: "Modifier Date Time",
-        Note: "Note",
-      },
-    ],
-    PerForm: [
-      {
-        CurrencyTypeCode: "کد واحد پول",
-        CurrencyTypeName: "نام نوعواحد پول",
-        Date: "تاریخ",
-        Modifier: "ویرایش کننده",
-        ModifierDateTime: "تاریخ و زمان ویرایش",
-        Note: "توضیحات",
-      },
-    ],
-    ArFrom: [
-      {
-        CurrencyTypeCode: "رمز نوع العملة",
-        CurrencyTypeName: "اسم نوع العملة",
-        Date: "تاریخ",
-        Modifier: "المعدل",
-        ModifierDateTime: "وقت تعديل التاريخ",
-        Note: "ملحوظة",
-      },
-    ],
-
-    EnBtn: [{ AddNew: "Add New", Submit: "Submit" }],
-    PerBtn: [{ AddNew: "ایجاد جدید", Submit: "ثبت" }],
-    ArBtn: [{ AddNew: "اضف جديد", Submit: "إرسال" }],
-
-    EnTable: [{}],
-    PerTable: [{}],
-    ArTable: [{}],
-  },
+export const rows = [
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-const getTranslation = (lang, text) => {
-  console.log(lang, text);
-  debugger;
-
-  return translations[lang][text];
-};
-
-const languages = (state = "en", action) => {
-  switch (action.type) {
-    case "CHANGE_LANGUAGE":
-      return action.language;
-    default:
-      return state;
-  }
-};
-
-const store = createStore(languages);
-
-const LanguageSelector = () => {
-  const options = allLanguages.map((language) => {
-    return (
-      <option
-        style={{ padding: "10px", margin: "10px", width: "10px" }}
-        value={language.code}
-      >
-        {language.name}
-      </option>
-    );
-  });
-  return (
-    <select
-      onChange={(e) => {
-        store.dispatch({
-          type: "CHANGE_LANGUAGE",
-          language: e.target.value,
-        });
-      }}
-    >
-      {options}
-    </select>
-  );
-};
-
-export default class LanguageSwitcher extends React.Component {
-  componentDidMount() {
-    store.subscribe(() => this.forceUpdate());
-  }
-
-  render() {
-    return (
-      <div>
-        {/* <p>{getTranslation(store.getState(), "text1")}</p> */}
-        <LanguageSelector />
-      </div>
-    );
-  }
+export function CreateMenu(name) {
+  return { name };
 }
+
+export const RowMenu = [
+  CreateMenu("Currency"),
+  CreateMenu("EXCHANGE RATE"),
+  CreateMenu("PRODUCTS"),
+  CreateMenu("PERSON"),
+  CreateMenu("Language"),
+  CreateMenu("REGION"),
+  CreateMenu("SERVICES"),
+  CreateMenu("UM"),
+];
+ 
