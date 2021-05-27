@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import {
@@ -9,8 +9,23 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
+import { DatePicker } from "@material-ui/pickers";
 import { Label } from "@material-ui/icons";
 
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar } from "react-modern-calendar-datepicker";
+
+const CalenderFarsi = () => {
+  const [selectedDay, setSelectedDay] = useState(null);
+  return (
+    <Calendar
+      value={selectedDay}
+      onChange={setSelectedDay}
+      shouldHighlightWeekends
+      locale="fa" // add this
+    />
+  );
+};
 function FromLayout() {
   return (
     <>
@@ -77,12 +92,7 @@ function FromLayout() {
           variant="filled"
           style={{ width: "50%", margin: "10px", background: "grey" }}
         />
-        <TextField
-          defaultValue="Modifier date Time"
-          id="Modifier"
-          variant="filled"
-          style={{ width: "50%", margin: "10px", background: "grey" }}
-        />
+        <CalenderFarsi />
         <Button
           style={{
             backgroundColor: "orange",

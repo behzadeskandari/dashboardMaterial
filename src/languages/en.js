@@ -1,0 +1,21 @@
+export default {
+  Currency: "Currency",
+  ExchaneRate: "EXCHANGE RATE",
+  Products: "PRODUCTS",
+  Person: "PERSON",
+  COSTOMANDPORT: "Costom And Port",
+  Language: "Language",
+  Region: "REGION",
+  Services: "SERVICES",
+  UM: "UM",
+  formDetail: {
+    CURRENCYTYPECODE: "Currenct Type Code",
+    CURRENCYTYPENAME: "Currenct Type Name",
+    DATE: "Date",
+    Modifier: "Modifier",
+    ModifierDateTime: "Modifier Date Time",
+    Note: "Note",
+    Submit: "Submit",
+    AddNew: "Add New",
+  },
+};

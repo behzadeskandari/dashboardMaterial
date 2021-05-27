@@ -1,0 +1,21 @@
+export default {
+  Currency: "عملة",
+  ExchaneRate: "سعر الصرف",
+  Products: "منتجات",
+  Person: "شخص",
+  COSTOMANDPORT: "العرف والميناء",
+  Language: "لغة",
+  Region: "منطقة",
+  Services: "خدمات",
+  UM: "إدارةالمستخدم",
+  formDetail: {
+    CURRENCYTYPECODE: "رمز نوع العملة",
+    CURRENCYTYPENAME: "اسم نوع العملة",
+    DATE: "تاريخ",
+    Modifier: "المعدل",
+    ModifierDateTime: "وقت تعديل التاريخ",
+    Note: "ملحوظة",
+    Submit: "إرسال",
+    AddNew: "اضف جديد",
+  },
+};

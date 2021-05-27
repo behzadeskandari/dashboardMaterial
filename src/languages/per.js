@@ -1,0 +1,21 @@
+export default {
+  Currency: "ارز",
+  ExchaneRate: "نرخ جا به جایی",
+  Products: "محصولات",
+  Person: "شخص",
+  Language: "زبان",
+  COSTOMANDPORT: "سفارشی و بندر",
+  Region: "منطقه",
+  Services: "سرویس ها",
+  UM: "مدیریت کاربران",
+  formDetail: {
+    CURRENCYTYPECODE: "نوع کد ارزی",
+    CURRENCYTYPENAME: "نام کد ارزی",
+    DATE: "تاریخ",
+    Modifier: "ویرابشگر",
+    ModifierDateTime: "تاریخ و زمان ویرایش",
+    Note: "نوت",
+    Submit: "تایید",
+    AddNew: "ایجاد جدید",
+  },
+};
